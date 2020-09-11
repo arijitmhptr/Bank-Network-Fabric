@@ -1,0 +1,60 @@
+{
+    "name": "bank-network-ICICI",
+    "version": "1.0.0",
+    "client": {
+        "organization": "ICICI",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "ICICI": {
+            "mspid": "ICICIMSP",
+            "peers": [
+                "peer0.ICICI.bank.com",
+                "peer1.ICICI.bank.com"
+            ],
+            "certificateAuthorities": [
+                "ca.ICICI.bank.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.ICICI.bank.com": {
+            "url": "grpcs://localhost:9051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICUDCCAfagAwIBAgIRAMNUfjwr5qIk9MG1Me4BWmkwCgYIKoZIzj0EAwIwcjEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFzAVBgNVBAoTDklDSUNJLmJhbmsuY29tMR0wGwYDVQQDExR0bHNj\nYS5JQ0lDSS5iYW5rLmNvbTAeFw0yMDA3MjAxNjEyMDBaFw0zMDA3MTgxNjEyMDBa\nMHIxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1T\nYW4gRnJhbmNpc2NvMRcwFQYDVQQKEw5JQ0lDSS5iYW5rLmNvbTEdMBsGA1UEAxMU\ndGxzY2EuSUNJQ0kuYmFuay5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAQ3\nvjXF+y+9hxbvLu7MGWvPLIjDCNOgff1P+xUDpFaDyx5U+KngPPGNkA4dUssTczit\nfP234Q4JT5zwQo30J2W8o20wazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYI\nKwYBBQUHAwIGCCsGAQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEICKh\n26Uwowa2kY8EHHAbu5bSll3BJF9i6KIrS3+X29mSMAoGCCqGSM49BAMCA0gAMEUC\nIQDYr2v3KwPjAtLW4KPlRQOhJRuULh18+LckvxPSmKAJswIgcfD3FEbP5SQWZCfM\nPmEL7t81wpOin4cR6V1oNLrGwaQ=\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.ICICI.bank.com",
+                "hostnameOverride": "peer0.ICICI.bank.com"
+            }
+        },
+        "peer1.ICICI.bank.com": {
+            "url": "grpcs://localhost:10051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICUDCCAfagAwIBAgIRAMNUfjwr5qIk9MG1Me4BWmkwCgYIKoZIzj0EAwIwcjEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFzAVBgNVBAoTDklDSUNJLmJhbmsuY29tMR0wGwYDVQQDExR0bHNj\nYS5JQ0lDSS5iYW5rLmNvbTAeFw0yMDA3MjAxNjEyMDBaFw0zMDA3MTgxNjEyMDBa\nMHIxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1T\nYW4gRnJhbmNpc2NvMRcwFQYDVQQKEw5JQ0lDSS5iYW5rLmNvbTEdMBsGA1UEAxMU\ndGxzY2EuSUNJQ0kuYmFuay5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAQ3\nvjXF+y+9hxbvLu7MGWvPLIjDCNOgff1P+xUDpFaDyx5U+KngPPGNkA4dUssTczit\nfP234Q4JT5zwQo30J2W8o20wazAOBgNVHQ8BAf8EBAMCAaYwHQYDVR0lBBYwFAYI\nKwYBBQUHAwIGCCsGAQUFBwMBMA8GA1UdEwEB/wQFMAMBAf8wKQYDVR0OBCIEICKh\n26Uwowa2kY8EHHAbu5bSll3BJF9i6KIrS3+X29mSMAoGCCqGSM49BAMCA0gAMEUC\nIQDYr2v3KwPjAtLW4KPlRQOhJRuULh18+LckvxPSmKAJswIgcfD3FEbP5SQWZCfM\nPmEL7t81wpOin4cR6V1oNLrGwaQ=\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer1.ICICI.bank.com",
+                "hostnameOverride": "peer1.ICICI.bank.com"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca.ICICI.bank.com": {
+            "url": "https://localhost:8054",
+            "caName": "ICICI-CA",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICSTCCAe+gAwIBAgIQU3YNqSC/ZM0C26H7EzArEzAKBggqhkjOPQQDAjBvMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEXMBUGA1UEChMOSUNJQ0kuYmFuay5jb20xGjAYBgNVBAMTEWNhLklD\nSUNJLmJhbmsuY29tMB4XDTIwMDcyMDE2MTIwMFoXDTMwMDcxODE2MTIwMFowbzEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFzAVBgNVBAoTDklDSUNJLmJhbmsuY29tMRowGAYDVQQDExFjYS5J\nQ0lDSS5iYW5rLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJ6TDmD8cL+V\n07gnyFkEKN/JdKK+8rYU8wNZJRohBvFMvanDd+zFwDo4u93s7GcvX3o0GoTHcjNi\nYlxZRkIVoi2jbTBrMA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcD\nAgYIKwYBBQUHAwEwDwYDVR0TAQH/BAUwAwEB/zApBgNVHQ4EIgQg5YiuHYplr/+G\nh6lHFCYCu0mNicIQoorPy48JiZBarr8wCgYIKoZIzj0EAwIDSAAwRQIgDadcefPE\nZXXrC0zUja6hxF1mDsOnyvuxM0Jm/8tMLHICIQCqsetPi1VFCJ86Tmf+SSCol3U/\nY4W/pvZOrJB/VX2QrA==\n-----END CERTIFICATE-----\n"
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+}

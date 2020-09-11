@@ -1,0 +1,88 @@
+---
+name: bank-network
+version: 1.0.0
+client:
+  organization: HDFC
+  connection:
+    timeout:
+      peer:
+        endorser: '300'
+organizations:
+  HDFC:
+    mspid: HDFCMSP
+    peers:
+    - peer0.HDFC.bank.com
+    - peer1.HDFC.bank.com
+    certificateAuthorities:
+    - ca.HDFC.bank.com
+peers:
+  peer0.HDFC.bank.com:
+    url: grpcs://localhost:7051
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICSzCCAfGgAwIBAgIQZ835Zga3Ryp0BUGmV+9Q+jAKBggqhkjOPQQDAjBwMQsw
+        CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+        YW5jaXNjbzEWMBQGA1UEChMNSERGQy5iYW5rLmNvbTEcMBoGA1UEAxMTdGxzY2Eu
+        SERGQy5iYW5rLmNvbTAeFw0yMDA3MjAxNjEyMDBaFw0zMDA3MTgxNjEyMDBaMHAx
+        CzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g
+        RnJhbmNpc2NvMRYwFAYDVQQKEw1IREZDLmJhbmsuY29tMRwwGgYDVQQDExN0bHNj
+        YS5IREZDLmJhbmsuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEo7RuG/6k
+        i5c5JQKaWJsSFCe/0Ajpx9ip2FgqFU/n4J/n81yaYnFiutHEnbN+Khqu4Vgwk0ES
+        03Al7lpMF3Czh6NtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUF
+        BwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCB4XjgJ/AyX
+        tpRKu1Pu4suoG+EU82knTXUHSm/iqIF80zAKBggqhkjOPQQDAgNIADBFAiEA0gCv
+        s8SP3MwATgCUfu+PvsVoI7KXyNbVCDvNr0lfcnQCIGtjSMp8VdKLnhvyqcbamT1B
+        kWHZjbVlxnFG5VTXaNTc
+        -----END CERTIFICATE-----
+        
+    grpcOptions:
+      ssl-target-name-override: peer0.HDFC.bank.com
+      hostnameOverride: peer0.HDFC.bank.com
+  peer1.HDFC.bank.com:
+    url: grpcs://localhost:8051
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICSzCCAfGgAwIBAgIQZ835Zga3Ryp0BUGmV+9Q+jAKBggqhkjOPQQDAjBwMQsw
+        CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+        YW5jaXNjbzEWMBQGA1UEChMNSERGQy5iYW5rLmNvbTEcMBoGA1UEAxMTdGxzY2Eu
+        SERGQy5iYW5rLmNvbTAeFw0yMDA3MjAxNjEyMDBaFw0zMDA3MTgxNjEyMDBaMHAx
+        CzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g
+        RnJhbmNpc2NvMRYwFAYDVQQKEw1IREZDLmJhbmsuY29tMRwwGgYDVQQDExN0bHNj
+        YS5IREZDLmJhbmsuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEo7RuG/6k
+        i5c5JQKaWJsSFCe/0Ajpx9ip2FgqFU/n4J/n81yaYnFiutHEnbN+Khqu4Vgwk0ES
+        03Al7lpMF3Czh6NtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUF
+        BwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCB4XjgJ/AyX
+        tpRKu1Pu4suoG+EU82knTXUHSm/iqIF80zAKBggqhkjOPQQDAgNIADBFAiEA0gCv
+        s8SP3MwATgCUfu+PvsVoI7KXyNbVCDvNr0lfcnQCIGtjSMp8VdKLnhvyqcbamT1B
+        kWHZjbVlxnFG5VTXaNTc
+        -----END CERTIFICATE-----
+        
+    grpcOptions:
+      ssl-target-name-override: peer1.HDFC.bank.com
+      hostnameOverride: peer1.HDFC.bank.com
+certificateAuthorities:
+  ca.HDFC.bank.com:
+    url: https://localhost:7054
+    caName: HDFC-CA
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICRTCCAeugAwIBAgIQBTDpuubWZ9clihYFSNU4MDAKBggqhkjOPQQDAjBtMQsw
+        CQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy
+        YW5jaXNjbzEWMBQGA1UEChMNSERGQy5iYW5rLmNvbTEZMBcGA1UEAxMQY2EuSERG
+        Qy5iYW5rLmNvbTAeFw0yMDA3MjAxNjEyMDBaFw0zMDA3MTgxNjEyMDBaMG0xCzAJ
+        BgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh
+        bmNpc2NvMRYwFAYDVQQKEw1IREZDLmJhbmsuY29tMRkwFwYDVQQDExBjYS5IREZD
+        LmJhbmsuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAELJkNIHjp/yn5TSA0
+        7FmTdFLs21MXilKGi6WHfIkr4wWYoogLzySDnrUblJDTzqRrxBM1oXmerb4ahDeX
+        owNsXKNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggr
+        BgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCDM3fkYvU+Yv1sK1Tk8
+        /5nJKCPekn+htuFgX5xC4vl4NzAKBggqhkjOPQQDAgNIADBFAiAlCuMaDbEYXoym
+        43kRvAjnfCmCCOFsHJyqgmClC1+WvQIhAL4t1/NVo8rlLRkqsL4TX3uaGoeBo20P
+        aNJAuCpfvKMI
+        -----END CERTIFICATE-----
+        
+    httpOptions:
+      verify: true

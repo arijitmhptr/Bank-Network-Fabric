@@ -1,0 +1,23 @@
+[
+     {
+          "name": "privateloan",
+          "policy": "OR('HDFCMSP.member', 'ICICIMSP.member')",
+          "requiredPeerCount": 0,
+          "maxPeerCount": 1,
+          "blockToLive": 1000000,
+          "memberOnlyRead": true,
+          "memberOnlyWrite": true
+     },
+     {
+          "name": "privateloanamount",
+          "policy": "OR('HDFCMSP.member')",
+          "requiredPeerCount": 0,
+          "maxPeerCount": 1,
+          "blockToLive": 0,
+          "memberOnlyRead": true,
+          "memberOnlyWrite": true,
+          "endorsementPolicy": {
+               "signaturePolicy": "OR('HDFCMSP.member')"
+          }
+     }
+]

@@ -1,0 +1,60 @@
+{
+    "name": "bank-network-HDFC",
+    "version": "1.0.0",
+    "client": {
+        "organization": "HDFC",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "HDFC": {
+            "mspid": "HDFCMSP",
+            "peers": [
+                "peer0.HDFC.bank.com",
+                "peer1.HDFC.bank.com"
+            ],
+            "certificateAuthorities": [
+                "ca.HDFC.bank.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.HDFC.bank.com": {
+            "url": "grpcs://localhost:${P0PORT}",
+            "tlsCACerts": {
+                "pem": "${PEERPEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.HDFC.bank.com",
+                "hostnameOverride": "peer0.HDFC.bank.com"
+            }
+        },
+        "peer1.HDFC.bank.com": {
+            "url": "grpcs://localhost:${P1PORT}",
+            "tlsCACerts": {
+                "pem": "${PEERPEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer1.HDFC.bank.com",
+                "hostnameOverride": "peer1.HDFC.bank.com"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca.HDFC.bank.com": {
+            "url": "https://localhost:${CAPORT}",
+            "caName": "ca-HDFC",
+            "tlsCACerts": {
+                "pem": "${CAPEM}"
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+}

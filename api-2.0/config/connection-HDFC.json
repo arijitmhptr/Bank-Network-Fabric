@@ -1,0 +1,60 @@
+{
+    "name": "bank-network",
+    "version": "1.0.0",
+    "client": {
+        "organization": "HDFC",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "HDFC": {
+            "mspid": "HDFCMSP",
+            "peers": [
+                "peer0.HDFC.bank.com",
+                "peer1.HDFC.bank.com"
+            ],
+            "certificateAuthorities": [
+                "ca.HDFC.bank.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.HDFC.bank.com": {
+            "url": "grpcs://localhost:7051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICSzCCAfGgAwIBAgIQZ835Zga3Ryp0BUGmV+9Q+jAKBggqhkjOPQQDAjBwMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEWMBQGA1UEChMNSERGQy5iYW5rLmNvbTEcMBoGA1UEAxMTdGxzY2Eu\nSERGQy5iYW5rLmNvbTAeFw0yMDA3MjAxNjEyMDBaFw0zMDA3MTgxNjEyMDBaMHAx\nCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g\nRnJhbmNpc2NvMRYwFAYDVQQKEw1IREZDLmJhbmsuY29tMRwwGgYDVQQDExN0bHNj\nYS5IREZDLmJhbmsuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEo7RuG/6k\ni5c5JQKaWJsSFCe/0Ajpx9ip2FgqFU/n4J/n81yaYnFiutHEnbN+Khqu4Vgwk0ES\n03Al7lpMF3Czh6NtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUF\nBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCB4XjgJ/AyX\ntpRKu1Pu4suoG+EU82knTXUHSm/iqIF80zAKBggqhkjOPQQDAgNIADBFAiEA0gCv\ns8SP3MwATgCUfu+PvsVoI7KXyNbVCDvNr0lfcnQCIGtjSMp8VdKLnhvyqcbamT1B\nkWHZjbVlxnFG5VTXaNTc\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.HDFC.bank.com",
+                "hostnameOverride": "peer0.HDFC.bank.com"
+            }
+        },
+        "peer1.HDFC.bank.com": {
+            "url": "grpcs://localhost:8051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICSzCCAfGgAwIBAgIQZ835Zga3Ryp0BUGmV+9Q+jAKBggqhkjOPQQDAjBwMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEWMBQGA1UEChMNSERGQy5iYW5rLmNvbTEcMBoGA1UEAxMTdGxzY2Eu\nSERGQy5iYW5rLmNvbTAeFw0yMDA3MjAxNjEyMDBaFw0zMDA3MTgxNjEyMDBaMHAx\nCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4g\nRnJhbmNpc2NvMRYwFAYDVQQKEw1IREZDLmJhbmsuY29tMRwwGgYDVQQDExN0bHNj\nYS5IREZDLmJhbmsuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEo7RuG/6k\ni5c5JQKaWJsSFCe/0Ajpx9ip2FgqFU/n4J/n81yaYnFiutHEnbN+Khqu4Vgwk0ES\n03Al7lpMF3Czh6NtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUF\nBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCB4XjgJ/AyX\ntpRKu1Pu4suoG+EU82knTXUHSm/iqIF80zAKBggqhkjOPQQDAgNIADBFAiEA0gCv\ns8SP3MwATgCUfu+PvsVoI7KXyNbVCDvNr0lfcnQCIGtjSMp8VdKLnhvyqcbamT1B\nkWHZjbVlxnFG5VTXaNTc\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer1.HDFC.bank.com",
+                "hostnameOverride": "peer1.HDFC.bank.com"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca.HDFC.bank.com": {
+            "url": "https://localhost:7054",
+            "caName": "HDFC-CA",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICRTCCAeugAwIBAgIQBTDpuubWZ9clihYFSNU4MDAKBggqhkjOPQQDAjBtMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEWMBQGA1UEChMNSERGQy5iYW5rLmNvbTEZMBcGA1UEAxMQY2EuSERG\nQy5iYW5rLmNvbTAeFw0yMDA3MjAxNjEyMDBaFw0zMDA3MTgxNjEyMDBaMG0xCzAJ\nBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh\nbmNpc2NvMRYwFAYDVQQKEw1IREZDLmJhbmsuY29tMRkwFwYDVQQDExBjYS5IREZD\nLmJhbmsuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAELJkNIHjp/yn5TSA0\n7FmTdFLs21MXilKGi6WHfIkr4wWYoogLzySDnrUblJDTzqRrxBM1oXmerb4ahDeX\nowNsXKNtMGswDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggr\nBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCDM3fkYvU+Yv1sK1Tk8\n/5nJKCPekn+htuFgX5xC4vl4NzAKBggqhkjOPQQDAgNIADBFAiAlCuMaDbEYXoym\n43kRvAjnfCmCCOFsHJyqgmClC1+WvQIhAL4t1/NVo8rlLRkqsL4TX3uaGoeBo20P\naNJAuCpfvKMI\n-----END CERTIFICATE-----\n"
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+}
